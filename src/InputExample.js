@@ -21,3 +21,5 @@ function InputExample() {
 }
 
 export default InputExample;
+
+//imc = poids * taille²
