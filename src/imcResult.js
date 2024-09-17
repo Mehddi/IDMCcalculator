@@ -4,16 +4,16 @@ function ImcResult() {
   // Déclarer deux états pour les valeurs des inputs
   const [height, setHeight] = useState(0);
   const [weight, setWeight] = useState(0);
-  const [sum, setSum] = useState(0);
+  const [imc, setIMC] = useState(0);
 
   // Fonction pour calculer la somme
   const calculateIMC = () => {
-    setSum(Number(height) + Number(weight));
+    setIMC(Number(weight) / ((Number(height)/100))**2);
   };
 
   return (
     <div>
-      <h1>Calculatrice de Somme</h1>
+      <h1>Calcul de l'imc</h1>
       
       {/* Champ d'entrée pour la taille */}
       <input
@@ -35,7 +35,7 @@ function ImcResult() {
       <button onClick={calculateIMC}>Calculer l'IMC</button>
 
       {/* Affichage de l'IMC */}
-      <p>L'IMC est : {sum}</p>
+      <p>L'IMC est : {imc}</p>
     </div>
   );
 }
